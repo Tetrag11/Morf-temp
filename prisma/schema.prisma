@@ -1,0 +1,78 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider          = "postgresql"
+  url               = env("POSTGRES_PRISMA_URL")
+  directUrl         = env("POSTGRES_URL_NON_POOLING")
+  shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+model Media {
+  id     Int    @id @default(autoincrement())
+  url    String
+  postId Int
+  key    String
+  Post   Post   @relation(fields: [postId], references: [id])
+}
+
+model Post {
+  id          Int      @id @default(autoincrement())
+  title       String
+  content     String
+  createdAt   DateTime @default(now())
+  public      Boolean  @default(false)
+  authorEmail String
+  Media       Media[]
+  user        user     @relation(fields: [authorEmail], references: [email])
+}
+
+model user {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  name      String   @db.VarChar(255)
+  email     String   @unique
+  password  String
+  avatar    Json     @default("{}")
+  Post      Post[]
+}
+
+// Relavant project
+
+model Project {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+  title     String   @unique @db.VarChar(255)
+  thumbnail String
+  link      String
+}
+
+model MorfContent {
+  id                     Int    @id @default(1)
+  logo                   String
+  email                  String
+  telephone              String
+  instagram              String
+  linkedin               String
+  facebook               String
+  copyright              String
+  section1Heading        String
+  section1Description    String
+  section1ButtonText     String
+  section2Heading        String
+  bannerHeading          String
+  bannerDescription      String
+  section3Heading        String
+  section3Description    String
+  section3SubDescription String
+}
+
+model MorfUsers {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  name      String   @db.VarChar(255)
+  email     String   @unique
+  password  String
+}
