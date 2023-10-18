@@ -4,25 +4,22 @@ import { hash } from "bcrypt";
 
 const prisma = new PrismaClient();
 async function main() {
-  const password = (await hash("ramilka610", 12)) as any;
+  try {
+    // Use Prisma to delete all records from the Project table
+    await prisma.project.deleteMany({});
 
-  const bob = await prisma.morfUsers.upsert({
-    where: { email: "tehanekanayake@gmail.com" },
-    update: {},
-    create: {
-      email: "tehanekanayake@gmail.com",
-      name: "tetrag",
-      password,
-    },
-  });
-  console.log({ bob });
+    console.log("All records in the Project table have been deleted.");
+  } catch (error) {
+    console.error("Error deleting records:", error);
+  } finally {
+    await prisma.$disconnect();
+  }
 }
+
 main()
-  .then(async () => {
-    await prisma.$disconnect();
+  .catch((e) => {
+    throw e;
   })
-  .catch(async (e) => {
-    console.error(e);
+  .finally(async () => {
     await prisma.$disconnect();
-    process.exit(1);
   });

@@ -1,5 +1,6 @@
 "use server";
 import prisma from "../../prisma/index";
+import { redirect } from "next/navigation";
 
 export const getContent = async () => {
   const getContent = await prisma.morfContent.findFirst();
@@ -63,5 +64,39 @@ export const updateContent = async (
     console.error("Error updating content:", error);
   } finally {
     await prisma.$disconnect();
+  }
+};
+
+export const addNewProject = async (formData: FormData) => {
+  const title = formData.get("title") as string;
+  const link = formData.get("link") as string;
+  const thumbnail = formData.get("image") as string;
+
+  try {
+    // Create a new project object with the provided parameters
+    const newProject = await prisma.project.create({
+      data: {
+        title: title,
+        link: link,
+        thumbnail: thumbnail,
+      },
+    });
+
+    redirect("/dashboard");
+  } catch (error) {
+    // Handle any errors that may occur during the database operation
+    throw error;
+  } finally {
+    // Close the Prisma client connection
+    await prisma.$disconnect();
+  }
+};
+
+export const getWork = async () => {
+  const getWork = await prisma.project.findMany();
+  if (getWork) {
+    return getWork;
+  } else {
+    return false;
   }
 };
