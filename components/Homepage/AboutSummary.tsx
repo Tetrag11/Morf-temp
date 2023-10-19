@@ -17,7 +17,7 @@ export default function AboutSummary() {
         <div className="flex flex-col gap-1 justify-center items-center">
           <div className="h-[40px] border-[1.5px] border-black w-0"></div>
           <Link
-            className="p-3 bg-black text-white sm:text-lg text-sm h-fit"
+            className="py-3 px-32 bg-black text-white sm:text-lg text-sm h-fit"
             href={"#"}
           >
             Read More

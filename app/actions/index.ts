@@ -100,3 +100,47 @@ export const getWork = async () => {
     return false;
   }
 };
+
+export const editProject = async (formData: FormData) => {
+  const id = Number(formData.get("id")) as number;
+  const title = formData.get("title") as string;
+  const link = formData.get("link") as string;
+  const thumbnail = formData.get("image") as string;
+
+  try {
+    // Use Prisma's `update` method to update the project by its ID.
+    const updatedProject = await prisma.project.update({
+      where: {
+        id: id, // Specify the project to update by its ID.
+      },
+      data: {
+        title: title,
+        thumbnail: thumbnail,
+        link: link,
+      },
+    });
+
+    redirect("/dashboard");
+  } catch (error: any) {
+    throw error;
+  } finally {
+    prisma.$disconnect;
+  }
+};
+
+export const getSingleWork = async (id: number) => {
+  try {
+    // Use Prisma's `findUnique` method to retrieve a single project by its ID.
+    const project = await prisma.project.findUnique({
+      where: {
+        id: id, // Specify the ID of the project you want to retrieve.
+      },
+    });
+
+    return project; // Return the project if found.
+  } catch (error) {
+    throw new Error(`Unable to fetch project: `);
+  } finally {
+    await prisma.$disconnect(); // Disconnect from the Prisma Client when done.
+  }
+};

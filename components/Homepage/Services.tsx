@@ -8,11 +8,12 @@ export default function Services() {
           SERVICES
         </h1>
         <h4 className="sm:text-3xl text-xl lg:px-0 px-3 ">
-          At morf we combine design, technology and data to make life easier for
-          arts and cultural organisations – and their audiences.
+          What i basically do is provide your business with the right tools to
+          help reach your business expectations and goals, in the form of a web
+          application.
         </h4>
         <p className="sm:text-lg text-base lg:px-0 px-3">
-          Our in-house experience and know-how includes: digital brand
+          My in-house experience and know-how includes: digital brand
           development; user-centred, inclusive design; responsive web
           development; technical integration; ticketing and fundraising; data
           analysis; and strategic consultancy...
