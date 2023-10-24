@@ -38,15 +38,13 @@ model user {
   Post      Post[]
 }
 
-// Relavant project
-
 model Project {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   title     String   @db.VarChar(255)
-  thumbnail String
   link      String
+  thumbnail String
 }
 
 model MorfContent {

@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 export default function Work({ work }: any) {
   return (
-    <div>
+    <div id="work">
       <div className=" max-w-screen-lg mx-auto sm:py-36 py-32">
         <h1 className="sm:text-7xl text-5xl max-w-[215px] font-bold  pb-12 lg:pl-0 pl-3 ">
           MY WORK

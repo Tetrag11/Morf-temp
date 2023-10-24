@@ -10,6 +10,7 @@ import Work from "@/components/Homepage/Work";
 import { getWork } from "./actions";
 import Banner from "@/components/Homepage/Banner";
 import Services from "@/components/Homepage/Services";
+import AboutMe from "@/components/Homepage/AboutMe";
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
