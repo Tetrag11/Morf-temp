@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Services() {
   return (
-    <div className="py-12  max-w-screen-lg mx-auto w-full">
+    <div id="services" className="py-12  max-w-screen-lg mx-auto w-full">
       <div className="w-full sm:max-w-[515px] max-w-[350px] flex flex-col gap-5">
         <h1 className="sm:text-7xl text-5xl  font-bold lg:px-0 px-3 ">
           SERVICES

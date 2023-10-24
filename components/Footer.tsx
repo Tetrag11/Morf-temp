@@ -20,22 +20,22 @@ export default function Footer() {
       </div>
       <ul className="flex sm:gap-5 gap-2  sm:py-3    w-full  border-y-[3px] border-black my-3 ">
         <li>
-          <Link className="sm:text-lg text-sm  " href={"#"}>
+          <Link className="sm:text-lg text-sm  " href={"/#work"}>
             Work
           </Link>
         </li>
         <li>
-          <Link className="sm:text-lg text-sm  " href={"#"}>
+          <Link className="sm:text-lg text-sm  " href={"/about"}>
             About
           </Link>
         </li>
         <li>
-          <Link className="sm:text-lg text-sm  " href={"#"}>
+          <Link className="sm:text-lg text-sm  " href={"#contact"}>
             Contact
           </Link>
         </li>
         <li>
-          <Link className="sm:text-lg text-sm  " href={"#"}>
+          <Link className="sm:text-lg text-sm  " href={"#services"}>
             Services
           </Link>
         </li>

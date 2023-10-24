@@ -21,22 +21,28 @@ export default function Header() {
         <div className="flex items-end  sm:justify-center justify-center ">
           <ul className="flex sm:gap-5 gap-2  sm:py-3 pb-5  sm:justify-center justify-center w-full  sm:border-t-[3px] sm:border-white ">
             <li>
-              <Link className="sm:text-lg text-sm  text-white" href={"#work"}>
+              <Link className="sm:text-lg text-sm  text-white" href={"/#work"}>
                 Work
               </Link>
             </li>
             <li>
-              <Link className="sm:text-lg text-sm  text-white" href={"#"}>
+              <Link className="sm:text-lg text-sm  text-white" href={"/about"}>
                 About
               </Link>
             </li>
             <li>
-              <Link className="sm:text-lg text-sm text-white " href={"#"}>
+              <Link
+                className="sm:text-lg text-sm text-white "
+                href={"#contact"}
+              >
                 Contact
               </Link>
             </li>
             <li>
-              <Link className="sm:text-lg text-sm text-white " href={"#"}>
+              <Link
+                className="sm:text-lg text-sm text-white "
+                href={"#services"}
+              >
                 Services
               </Link>
             </li>
