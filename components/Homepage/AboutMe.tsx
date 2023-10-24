@@ -61,8 +61,8 @@ export default function AboutMe() {
         </div>
         <span className="max-w-[300px] py-10 border-black border-y-[3px] order-1 lg:order-2 lg:mx-0 mx-auto lg:my-0 my-10">
           <p className=" text-3xl">
-            If you're seeking a dependable web developer who can bring your
-            vision to life, let's collaborate on your next project.
+            If you are seeking a dependable web developer who can bring your
+            vision to life, let us collaborate on your next project.
           </p>
         </span>
       </div>
