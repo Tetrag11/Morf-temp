@@ -18,7 +18,7 @@ export default function AboutSummary() {
           <div className="h-[40px] border-[1.5px] border-black w-0"></div>
           <Link
             className="py-3 px-32 bg-black text-white sm:text-lg text-sm h-fit"
-            href={"#"}
+            href={"/about"}
           >
             Read More
           </Link>

@@ -33,7 +33,7 @@ export default function Header() {
             <li>
               <Link
                 className="sm:text-lg text-sm text-white "
-                href={"#contact"}
+                href={"/#contact"}
               >
                 Contact
               </Link>
@@ -41,7 +41,7 @@ export default function Header() {
             <li>
               <Link
                 className="sm:text-lg text-sm text-white "
-                href={"#services"}
+                href={"/#services"}
               >
                 Services
               </Link>
